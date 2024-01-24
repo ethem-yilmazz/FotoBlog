@@ -1,0 +1,20 @@
+﻿
+@model YeniGonderiViewModel
+@{
+	ViewData["Title"] = "Yeni Gönderi";
+}
+<h2>@ViewBag.Title</h2>
+<form asp-action="Yeni" enctype="multipart/form-data">
+	<div class="mb-3">
+		<label asp-for="Baslik" class="form-label"></label>
+		<input asp-for="Baslik" type="text" class="form-control"/>
+		<span asp-validation-for="Baslik" class="text-danger mt-1"></span>
+	</div>
+	<div class="mb-3">
+		<label asp-for="Resim" class="form-label"></label>
+		<input asp-for="Resim" type="file" class="form-control" />
+		<span asp-validation-for="Resim" class="text-danger mt-1"></span>
+	</div>
+	<button type="submit" class="btn btn-primary">Ekle</button>
+	<a class="btn btn-danger" asp-controller="Home" asp-action="Index">İptal</a>
+</form>
